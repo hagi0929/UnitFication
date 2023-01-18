@@ -1,0 +1,27 @@
+{
+  "name": "UnitFication",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": "assets/image/logo_48.png",
+    "icons": {
+      "16": "assets/image/logo_16.png",
+      "48": "assets/image/logo_48.png"
+    },
+    "default_popup": "scripts/popup.html"
+  },
+  "background": {
+    "service_worker":  "scripts/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": ["scripts/contentscript.js"]
+    }
+  ],
+  "permissions": ["storage"]
+
+}
